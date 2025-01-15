@@ -1,0 +1,7 @@
+FROM ubuntu:20.04
+
+# Update and install required dependencies
+RUN apt-get update && apt-get install -y software-properties-common \
+    && add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" \
+    && wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | gpg --dearmor -o /usr/share/keyrings/cran.gpg \
+    && apt-get update && apt-get install -y r-base

@@ -1,0 +1,4 @@
+build: Dockerfile
+	docker build -t my-r-environment
+
+default: build
